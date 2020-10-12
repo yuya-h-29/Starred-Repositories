@@ -14,6 +14,9 @@ class RepositoryListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "AAAAAA"
+        
         configureTableView()
         
     }
@@ -25,7 +28,9 @@ class RepositoryListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 100
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: Cells.repositoryCell)
         tableView.pin(to: view)
+        
         
         
     }
@@ -42,7 +47,12 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.repositoryCell) as! RepositoryCell
+        
+        cell.set()
+        
+        return cell
     }
     
     

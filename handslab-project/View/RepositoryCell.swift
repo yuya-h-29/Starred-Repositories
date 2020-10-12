@@ -25,6 +25,7 @@ class RepositoryCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "AAAAAAAA"
         return label
     }()
     
@@ -53,7 +54,11 @@ class RepositoryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addViews()
+        addSubview(userImageView)
+        addSubview(userNameLabel)
+//        containerView.addSubview(userNameLabel)
+//        containerView.addSubview(repositoryNameLabel)
+//        addSubview(starNumLabel)
  
         configureViewComponents()
     }
@@ -63,16 +68,10 @@ class RepositoryCell: UITableViewCell {
     }
     
     
-    func addViews(){
-        addSubview(userImageView)
-        containerView.addSubview(userNameLabel)
-        containerView.addSubview(repositoryNameLabel)
-        addSubview(starNumLabel)
-    }
-    
-    
-    func set(){
+    func set() {
         userImageView.image = UIImage(named: "001")
+//        userNameLabel.text = "AAAAAAA"
+//        repositoryNameLabel.text = "BBBBBBBB"
     }
     
     
@@ -80,20 +79,43 @@ class RepositoryCell: UITableViewCell {
     func configureViewComponents() {
         
         setUserImageConstraints()
+//        setContainerViewConstraints()
+        setUserNameLabelConstraints()
+//        setRepositoryNameLabel()
         
     }
     
     
-    func setUserImageConstraints(){
+    func setUserImageConstraints() {
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         userImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         userImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        userImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        userImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         userImageView.widthAnchor.constraint(equalTo: userImageView.heightAnchor, multiplier: 1).isActive = true
     }
     
     
-//    profileImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-//    profileImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
-//    profileImageView.widthAnchor.constraint(equalToConstant:70).isActive = true profileImageView.heightAnchor.constraint(equalToConstant:70).isActive = true
+//    func setContainerViewConstraints() {
+//        containerView.translatesAutoresizingMaskIntoConstraints = false
+//        containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+//        containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
+//        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+//        containerView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//    }
+//
+//
+    func setUserNameLabelConstraints() {
+        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
+//        userNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        userNameLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor).isActive = true
+        userNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+    }
+//
+    
+//    func setRepositoryNameLabel(){
+//        repositoryNameLabel.anchor(top: userNameLabel.bottomAnchor, left: containerView.leadingAnchor, bottom: containerView.bottomAnchor, right: containerView.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+//    }
+    
+    
+    
 }

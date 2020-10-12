@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74509575253435EF00F0B8DA /* RepositoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74509574253435EF00F0B8DA /* RepositoryListVC.swift */; };
+		745095772534394600F0B8DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745095762534394600F0B8DA /* Extensions.swift */; };
 		74D4422125341EA8003E8C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4422025341EA8003E8C93 /* AppDelegate.swift */; };
 		74D4422325341EA8003E8C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4422225341EA8003E8C93 /* SceneDelegate.swift */; };
-		74D4422525341EA8003E8C93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4422425341EA8003E8C93 /* ViewController.swift */; };
 		74D4422825341EA8003E8C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D4422625341EA8003E8C93 /* Main.storyboard */; };
 		74D4422A25341EAB003E8C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4422925341EAB003E8C93 /* Assets.xcassets */; };
 		74D4422D25341EAB003E8C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D4422B25341EAB003E8C93 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74509574253435EF00F0B8DA /* RepositoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListVC.swift; sourceTree = "<group>"; };
+		745095762534394600F0B8DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		74D4421D25341EA8003E8C93 /* handslab-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "handslab-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4422025341EA8003E8C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D4422225341EA8003E8C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74D4422425341EA8003E8C93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74D4422725341EA8003E8C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74D4422925341EAB003E8C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D4422C25341EAB003E8C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7450956F2534241300F0B8DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		745095702534241E00F0B8DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74D4422625341EA8003E8C93 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		745095712534242400F0B8DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74D4422025341EA8003E8C93 /* AppDelegate.swift */,
+				74D4422225341EA8003E8C93 /* SceneDelegate.swift */,
+				74509574253435EF00F0B8DA /* RepositoryListVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		745095722534244D00F0B8DA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		745095732534245700F0B8DA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				745095762534394600F0B8DA /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		74D4421425341EA8003E8C93 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +98,11 @@
 		74D4421F25341EA8003E8C93 /* handslab-project */ = {
 			isa = PBXGroup;
 			children = (
-				74D4422025341EA8003E8C93 /* AppDelegate.swift */,
-				74D4422225341EA8003E8C93 /* SceneDelegate.swift */,
-				74D4422425341EA8003E8C93 /* ViewController.swift */,
-				74D4422625341EA8003E8C93 /* Main.storyboard */,
+				7450956F2534241300F0B8DA /* Model */,
+				745095702534241E00F0B8DA /* View */,
+				745095712534242400F0B8DA /* Controller */,
+				745095722534244D00F0B8DA /* Service */,
+				745095732534245700F0B8DA /* Utils */,
 				74D4422925341EAB003E8C93 /* Assets.xcassets */,
 				74D4422B25341EAB003E8C93 /* LaunchScreen.storyboard */,
 				74D4422E25341EAB003E8C93 /* Info.plist */,
@@ -138,9 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D4422525341EA8003E8C93 /* ViewController.swift in Sources */,
+				74509575253435EF00F0B8DA /* RepositoryListVC.swift in Sources */,
 				74D4422125341EA8003E8C93 /* AppDelegate.swift in Sources */,
 				74D4422325341EA8003E8C93 /* SceneDelegate.swift in Sources */,
+				745095772534394600F0B8DA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

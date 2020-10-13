@@ -31,8 +31,7 @@ struct Service {
                         repositoryArray.append(repository)
                         completion(repositoryArray)
                     }
-                    
-                    
+            
                 }
                     
                 

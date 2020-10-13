@@ -16,15 +16,12 @@ class RepositoryCell: UITableViewCell {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
         img.clipsToBounds = true
-        img.backgroundColor = .black
-
         return img
     }()
     
     let containerView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.backgroundColor = .systemPink
         return view
     }()
     
@@ -48,9 +45,10 @@ class RepositoryCell: UITableViewCell {
     
     let starNumLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemPink
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14)
-        label.backgroundColor = .black
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -60,15 +58,12 @@ class RepositoryCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+                
         addSubview(userImageView)
         containerView.addSubview(userNameLabel)
         containerView.addSubview(repositoryNameLabel)
         addSubview(containerView)
         addSubview(starNumLabel)
-        
-        configureUserNameLabel()
-        configureRepositoryNameLabel()
  
         configureViewConstraints()
     }
@@ -89,22 +84,12 @@ class RepositoryCell: UITableViewCell {
     //MARK: - Helper functions
     
     func configureCellView(repository: Repository) {
-        userImageView.image = UIImage(named: "001")
+        userImageView.setUserImage(imageUrl: repository.userImageUrl)
         userNameLabel.text = repository.userName
         repositoryNameLabel.text = repository.repositoryName
         starNumLabel.text = "⭐️\(String(describing: repository.starNum))"
     }
     
-    
-    func configureUserNameLabel() {
-        userNameLabel.numberOfLines = 0
-        userNameLabel.adjustsFontSizeToFitWidth = true
-    }
-    
-    func configureRepositoryNameLabel() {
-        repositoryNameLabel.numberOfLines = 0
-        repositoryNameLabel.adjustsFontSizeToFitWidth = true
-    }
     
     func configureViewConstraints() {
         setUserImageConstraints()
@@ -127,7 +112,7 @@ class RepositoryCell: UITableViewCell {
     func setContainerViewConstraints() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
         containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
         containerView.trailingAnchor.constraint(equalTo: starNumLabel.leadingAnchor, constant: -10).isActive = true
     }
@@ -136,7 +121,7 @@ class RepositoryCell: UITableViewCell {
     func setUserNameLabelConstraints() {
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-//        userNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        userNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         userNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
     }
 
@@ -144,9 +129,8 @@ class RepositoryCell: UITableViewCell {
     func setRepositoryNameLabel() {
         repositoryNameLabel.translatesAutoresizingMaskIntoConstraints = false
         repositoryNameLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor).isActive = true
-//        repositoryNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        repositoryNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         repositoryNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-//        repositoryNameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: containerView.leadingAnchor, constant: 5).isActive = true
     }
     
     
@@ -154,7 +138,7 @@ class RepositoryCell: UITableViewCell {
         starNumLabel.translatesAutoresizingMaskIntoConstraints = false
         starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-//        starNumLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        starNumLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
     }
 
     

@@ -13,24 +13,28 @@ import Alamofire
 
 struct Service {
 
-    static func fetchData() {
+    static func fetchData(completion: @escaping ([Repository]) -> ()) {
+        
+        var repositoryArray = [Repository]()
 
         AF.request(API.gitHubEndpoint).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 
-//                debugPrint(json)
-                
-                let repositoryItemArr = json["items"].arrayValue
+                if let repositoryItemArray = json[API.items].array {
                     
-                for item in repositoryItemArr {
-                    print(item["owner"]["avatar_url"])
+                    for item in repositoryItemArray {
+                            
+                        let repository = Repository(userImageUrl: item[API.owner][API.avatarUrl].stringValue, userName: item[API.owner][API.login].stringValue, repositoryName: item[API.name].stringValue, starNum: item[API.starNum].intValue, repositoryUrl: item[API.repositoryUrl].stringValue)
+
+                        repositoryArray.append(repository)
+                        completion(repositoryArray)
+                    }
                     
                     
-                    Repository(userImageUrl: item["owner"]["avatar_url"].stringValue, userName: item["owner"]["user_name"].stringValue, repositoryName: item["owner"]["repository_name"].stringValue, starNum: item["owner"]["star_number"].intValue)
- 
                 }
+                    
                 
             case .failure(let error):
                 print(error)
@@ -39,5 +43,6 @@ struct Service {
         }
 
     }
+    
 
 }

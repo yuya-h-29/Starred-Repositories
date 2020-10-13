@@ -16,4 +16,14 @@ enum Cells {
 enum API {
     
     static let gitHubEndpoint = "https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc"
+    
+    static let items = "items"
+    static let owner = "owner"
+    static let avatarUrl = "avatar_url"
+    static let name = "name"
+    static let login = "login"
+    static let starNum = "stargazers_count"
+    static let repositoryUrl = "html_url"
+    
 }
+

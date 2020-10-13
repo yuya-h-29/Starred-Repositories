@@ -14,4 +14,6 @@ struct Repository {
     let userName: String?
     let repositoryName: String?
     let starNum: Int?
+    let repositoryUrl: String?
+    
 }

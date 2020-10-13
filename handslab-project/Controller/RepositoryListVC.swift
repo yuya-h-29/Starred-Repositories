@@ -16,14 +16,25 @@ class RepositoryListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "AAAAAA"
+//        title = "AAAAAA"
         
         configureTableView()
-        
-        Service.fetchData()
+        fetchData()
         
     }
     
+    //MARK: - API
+    
+    func fetchData() {
+        Service.fetchData { (repository) in
+            self.repositories = repository
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    
+    //MARK: - Helper functions
     
     func configureTableView() {
         
@@ -44,7 +55,7 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

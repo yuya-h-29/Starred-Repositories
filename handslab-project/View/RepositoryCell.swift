@@ -26,26 +26,31 @@ class RepositoryCell: UITableViewCell {
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.text = "AAAAAAAA"
+        label.textColor = .white
         return label
     }()
     
     let repositoryNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .gray
+//        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "BBBBBB"
+        label.textColor = .white
         return label
     }()
     
     let containerView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
+        view.backgroundColor = .black
         return view
     }()
     
     let starNumLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .systemPink
         label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "1000"
         return label
     }()
     
@@ -55,10 +60,10 @@ class RepositoryCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(userImageView)
-        addSubview(userNameLabel)
-//        containerView.addSubview(userNameLabel)
-//        containerView.addSubview(repositoryNameLabel)
-//        addSubview(starNumLabel)
+        addSubview(containerView)
+        containerView.addSubview(userNameLabel)
+        containerView.addSubview(repositoryNameLabel)
+        addSubview(starNumLabel)
  
         configureViewComponents()
     }
@@ -79,9 +84,10 @@ class RepositoryCell: UITableViewCell {
     func configureViewComponents() {
         
         setUserImageConstraints()
-//        setContainerViewConstraints()
+        setContainerViewConstraints()
         setUserNameLabelConstraints()
-//        setRepositoryNameLabel()
+        setRepositoryNameLabel()
+        setStarNumLabel()
         
     }
     
@@ -95,27 +101,37 @@ class RepositoryCell: UITableViewCell {
     }
     
     
-//    func setContainerViewConstraints() {
-//        containerView.translatesAutoresizingMaskIntoConstraints = false
-//        containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
-//        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-//        containerView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//    }
-//
-//
+    func setContainerViewConstraints() {
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
+
+    
     func setUserNameLabelConstraints() {
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
-//        userNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        userNameLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor).isActive = true
-        userNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        userNameLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        userNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        userNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
     }
-//
+
     
-//    func setRepositoryNameLabel(){
-//        repositoryNameLabel.anchor(top: userNameLabel.bottomAnchor, left: containerView.leadingAnchor, bottom: containerView.bottomAnchor, right: containerView.trailingAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
-//    }
+    func setRepositoryNameLabel() {
+        repositoryNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        repositoryNameLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor).isActive = true
+        repositoryNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+    }
     
+    
+    func setStarNumLabel() {
+        starNumLabel.translatesAutoresizingMaskIntoConstraints = false
+        starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        starNumLabel.leadingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 10).isActive = true
+        
+    }
+
     
     
 }

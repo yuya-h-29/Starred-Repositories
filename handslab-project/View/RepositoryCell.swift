@@ -26,7 +26,6 @@ class RepositoryCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = "AAAAAA"
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -36,7 +35,6 @@ class RepositoryCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "BBBBB"
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -45,6 +43,7 @@ class RepositoryCell: UITableViewCell {
     let containerView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
+        view.backgroundColor = .systemPink
         return view
     }()
     
@@ -53,7 +52,6 @@ class RepositoryCell: UITableViewCell {
         label.textColor = .systemPink
         label.font = UIFont.systemFont(ofSize: 14)
         label.backgroundColor = .white
-        label.text = "⭐️1000"
         return label
     }()
     
@@ -67,6 +65,7 @@ class RepositoryCell: UITableViewCell {
         addSubview(userImageView)
         containerView.addSubview(userNameLabel)
         containerView.addSubview(repositoryNameLabel)
+//        containerView.addSubview(starNumLabel)
         addSubview(containerView)
         addSubview(starNumLabel)
  
@@ -89,10 +88,11 @@ class RepositoryCell: UITableViewCell {
     //MARK: - Helper functions
     
     
-    func set() {
+    func configureView(repository: Repository) {
         userImageView.image = UIImage(named: "001")
-//        userNameLabel.text = "AAAAAAA"
-//        repositoryNameLabel.text = "BBBBBBBB"
+        userNameLabel.text = repository.userName
+        repositoryNameLabel.text = repository.repositoryName
+        starNumLabel.text = "⭐️\(1)"
     }
     
     
@@ -142,6 +142,8 @@ class RepositoryCell: UITableViewCell {
         starNumLabel.translatesAutoresizingMaskIntoConstraints = false
         starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+//        starNumLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor).isActive = true
+//        starNumLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
     }
 
     

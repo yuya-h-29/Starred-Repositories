@@ -62,7 +62,7 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.repositoryCell) as! RepositoryCell
         
-        cell.set()
+        cell.configureView(repository: repositories[indexPath.row])
         
         return cell
     }

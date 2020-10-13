@@ -64,9 +64,11 @@ class RepositoryCell: UITableViewCell {
         addSubview(userImageView)
         containerView.addSubview(userNameLabel)
         containerView.addSubview(repositoryNameLabel)
-//        containerView.addSubview(starNumLabel)
         addSubview(containerView)
         addSubview(starNumLabel)
+        
+        configureUserNameLabel()
+        configureRepositoryNameLabel()
  
         configureViewConstraints()
     }
@@ -86,14 +88,23 @@ class RepositoryCell: UITableViewCell {
     
     //MARK: - Helper functions
     
-    
-    func configureView(repository: Repository) {
+    func configureCellView(repository: Repository) {
         userImageView.image = UIImage(named: "001")
         userNameLabel.text = repository.userName
         repositoryNameLabel.text = repository.repositoryName
         starNumLabel.text = "⭐️\(String(describing: repository.starNum))"
     }
     
+    
+    func configureUserNameLabel() {
+        userNameLabel.numberOfLines = 0
+        userNameLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    func configureRepositoryNameLabel() {
+        repositoryNameLabel.numberOfLines = 0
+        repositoryNameLabel.adjustsFontSizeToFitWidth = true
+    }
     
     func configureViewConstraints() {
         setUserImageConstraints()
@@ -116,18 +127,16 @@ class RepositoryCell: UITableViewCell {
     func setContainerViewConstraints() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
-//        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10).isActive = true
         containerView.trailingAnchor.constraint(equalTo: starNumLabel.leadingAnchor, constant: -10).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 90).isActive = true
-//        containerView.widthAnchor.constraint(equalTo: containerView.widthAnchor)
     }
 
     
     func setUserNameLabelConstraints() {
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        userNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+//        userNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         userNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
     }
 
@@ -135,18 +144,17 @@ class RepositoryCell: UITableViewCell {
     func setRepositoryNameLabel() {
         repositoryNameLabel.translatesAutoresizingMaskIntoConstraints = false
         repositoryNameLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor).isActive = true
-        repositoryNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+//        repositoryNameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        repositoryNameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+//        repositoryNameLabel.trailingAnchor.constraint(greaterThanOrEqualTo: containerView.leadingAnchor, constant: 5).isActive = true
     }
     
     
     func setStarNumLabel() {
         starNumLabel.translatesAutoresizingMaskIntoConstraints = false
         starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        starNumLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor).isActive = true
-//        starNumLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-//        starNumLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor).isActive = true
-//        starNumLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+//        starNumLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
     }
 
     

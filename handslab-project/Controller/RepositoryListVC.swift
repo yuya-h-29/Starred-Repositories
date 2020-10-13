@@ -20,6 +20,8 @@ class RepositoryListVC: UIViewController {
         
         configureTableView()
         
+        Service.fetchData()
+        
     }
     
     

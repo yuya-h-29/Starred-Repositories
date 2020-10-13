@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11D7C876B9A90222BD5DDE45 /* Pods_handslab_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496D20543A7A144136ED3604 /* Pods_handslab_project.framework */; };
 		74509575253435EF00F0B8DA /* RepositoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74509574253435EF00F0B8DA /* RepositoryListVC.swift */; };
 		745095772534394600F0B8DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745095762534394600F0B8DA /* Extensions.swift */; };
 		746CCD1925344C72009FF3C8 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746CCD1825344C72009FF3C8 /* RepositoryCell.swift */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1507684F01E38A662955F949 /* Pods-handslab-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-handslab-project.release.xcconfig"; path = "Target Support Files/Pods-handslab-project/Pods-handslab-project.release.xcconfig"; sourceTree = "<group>"; };
+		496D20543A7A144136ED3604 /* Pods_handslab_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_handslab_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74509574253435EF00F0B8DA /* RepositoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListVC.swift; sourceTree = "<group>"; };
 		745095762534394600F0B8DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		746CCD1825344C72009FF3C8 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		74D4422925341EAB003E8C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D4422C25341EAB003E8C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D4422E25341EAB003E8C93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE922784702BE784833843B9 /* Pods-handslab-project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-handslab-project.debug.xcconfig"; path = "Target Support Files/Pods-handslab-project/Pods-handslab-project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D7C876B9A90222BD5DDE45 /* Pods_handslab_project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,8 @@
 			children = (
 				74D4421F25341EA8003E8C93 /* handslab-project */,
 				74D4421E25341EA8003E8C93 /* Products */,
+				A5A6697274960E540A15EE01 /* Pods */,
+				BD74FDBC4F8CD73B3A72E0C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +126,24 @@
 			path = "handslab-project";
 			sourceTree = "<group>";
 		};
+		A5A6697274960E540A15EE01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE922784702BE784833843B9 /* Pods-handslab-project.debug.xcconfig */,
+				1507684F01E38A662955F949 /* Pods-handslab-project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD74FDBC4F8CD73B3A72E0C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				496D20543A7A144136ED3604 /* Pods_handslab_project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74D4423125341EAB003E8C93 /* Build configuration list for PBXNativeTarget "handslab-project" */;
 			buildPhases = (
+				C1213E05CB9A929E1D439899 /* [CP] Check Pods Manifest.lock */,
 				74D4421925341EA8003E8C93 /* Sources */,
 				74D4421A25341EA8003E8C93 /* Frameworks */,
 				74D4421B25341EA8003E8C93 /* Resources */,
+				AC7DC9F81E0E5BC29B6A062B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC7DC9F81E0E5BC29B6A062B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-handslab-project/Pods-handslab-project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-handslab-project/Pods-handslab-project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-handslab-project/Pods-handslab-project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1213E05CB9A929E1D439899 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-handslab-project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74D4421925341EA8003E8C93 /* Sources */ = {
@@ -330,6 +399,7 @@
 		};
 		74D4423225341EAB003E8C93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE922784702BE784833843B9 /* Pods-handslab-project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -348,6 +418,7 @@
 		};
 		74D4423325341EAB003E8C93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1507684F01E38A662955F949 /* Pods-handslab-project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

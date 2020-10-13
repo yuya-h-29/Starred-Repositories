@@ -25,16 +25,20 @@ class RepositoryCell: UITableViewCell {
     let userNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.text = "AAAAAAAA"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.text = "AAAAAA"
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
     let repositoryNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.text = "BBBBBB"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "BBBBB"
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -47,7 +51,7 @@ class RepositoryCell: UITableViewCell {
     let starNumLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemPink
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.backgroundColor = .white
         label.text = "⭐️1000"
         return label
@@ -105,7 +109,7 @@ class RepositoryCell: UITableViewCell {
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         userImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         userImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        userImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        userImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         userImageView.widthAnchor.constraint(equalTo: userImageView.heightAnchor, multiplier: 1).isActive = true
     }
     
@@ -114,7 +118,7 @@ class RepositoryCell: UITableViewCell {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: starNumLabel.leadingAnchor, constant: -12).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
     }
 

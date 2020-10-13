@@ -13,5 +13,5 @@ struct Repository {
     let userImageUrl: String?
     let userName: String?
     let repositoryName: String?
-    let starstarNum: Int?
+    let starNum: Int?
 }

@@ -11,6 +11,8 @@
 		745095772534394600F0B8DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745095762534394600F0B8DA /* Extensions.swift */; };
 		746CCD1925344C72009FF3C8 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746CCD1825344C72009FF3C8 /* RepositoryCell.swift */; };
 		746CCD1B2534B3FD009FF3C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746CCD1A2534B3FD009FF3C8 /* Constants.swift */; };
+		746CCD1D25356437009FF3C8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746CCD1C25356437009FF3C8 /* Repository.swift */; };
+		746CCD1F2535671B009FF3C8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746CCD1E2535671B009FF3C8 /* Service.swift */; };
 		74D4422125341EA8003E8C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4422025341EA8003E8C93 /* AppDelegate.swift */; };
 		74D4422325341EA8003E8C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4422225341EA8003E8C93 /* SceneDelegate.swift */; };
 		74D4422A25341EAB003E8C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D4422925341EAB003E8C93 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		745095762534394600F0B8DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		746CCD1825344C72009FF3C8 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		746CCD1A2534B3FD009FF3C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		746CCD1C25356437009FF3C8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		746CCD1E2535671B009FF3C8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		74D4421D25341EA8003E8C93 /* handslab-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "handslab-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4422025341EA8003E8C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D4422225341EA8003E8C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				746CCD1A2534B3FD009FF3C8 /* Constants.swift */,
+				746CCD1C25356437009FF3C8 /* Repository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -70,6 +75,7 @@
 		745095722534244D00F0B8DA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				746CCD1E2535671B009FF3C8 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746CCD1D25356437009FF3C8 /* Repository.swift in Sources */,
+				746CCD1F2535671B009FF3C8 /* Service.swift in Sources */,
 				746CCD1925344C72009FF3C8 /* RepositoryCell.swift in Sources */,
 				74509575253435EF00F0B8DA /* RepositoryListVC.swift in Sources */,
 				74D4422125341EA8003E8C93 /* AppDelegate.swift in Sources */,

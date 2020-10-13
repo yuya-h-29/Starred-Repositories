@@ -10,6 +10,7 @@ import UIKit
 
 class RepositoryCell: UITableViewCell {
     
+    //MARK: - Properties
     
     let userImageView: UIImageView = {
         let img = UIImageView()
@@ -53,6 +54,8 @@ class RepositoryCell: UITableViewCell {
     }()
     
 
+    
+    //MARK: - Init
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,7 +66,7 @@ class RepositoryCell: UITableViewCell {
         addSubview(containerView)
         addSubview(starNumLabel)
  
-        configureViewComponents()
+        configureViewConstraints()
     }
     
     
@@ -79,6 +82,9 @@ class RepositoryCell: UITableViewCell {
     }
     
     
+    //MARK: - Helper functions
+    
+    
     func set() {
         userImageView.image = UIImage(named: "001")
 //        userNameLabel.text = "AAAAAAA"
@@ -86,18 +92,13 @@ class RepositoryCell: UITableViewCell {
     }
     
     
-    
-    func configureViewComponents() {
-        
-        
+    func configureViewConstraints() {
         setUserImageConstraints()
         setContainerViewConstraints()
         setUserNameLabelConstraints()
         setRepositoryNameLabel()
         setStarNumLabel()
-        
     }
-    
     
     
     func setUserImageConstraints() {
@@ -137,8 +138,6 @@ class RepositoryCell: UITableViewCell {
         starNumLabel.translatesAutoresizingMaskIntoConstraints = false
         starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-
-        
     }
 
     

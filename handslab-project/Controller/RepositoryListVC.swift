@@ -11,6 +11,7 @@ import UIKit
 class RepositoryListVC: UIViewController {
     
     var tableView = UITableView()
+    var repositories: [Repository] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,6 @@ class RepositoryListVC: UIViewController {
         tableView.rowHeight = 100
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: Cells.repositoryCell)
         tableView.pin(to: view)
-        
-        
         
     }
 

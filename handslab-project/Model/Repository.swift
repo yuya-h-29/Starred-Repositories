@@ -10,10 +10,10 @@ import Foundation
 
 struct Repository {
     
-    let userImageUrl: String?
-    let userName: String?
-    let repositoryName: String?
-    let starNum: Int?
-    let repositoryUrl: String?
+    let userImageUrl: String
+    let userName: String
+    let repositoryName: String
+    let starNum: Int
+    let repositoryUrl: String
     
 }

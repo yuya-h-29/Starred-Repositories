@@ -14,13 +14,12 @@ class RepositoryCell: UITableViewCell {
     let userImageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
-//        img.layer.cornerRadius = img.frame.height / 2
-        img.layer.cornerRadius = 40
         img.clipsToBounds = true
         img.backgroundColor = .black
-        
+
         return img
     }()
+    
     
     let userNameLabel: UILabel = {
         let label = UILabel()
@@ -67,6 +66,14 @@ class RepositoryCell: UITableViewCell {
         configureViewComponents()
     }
     
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        userImageView.layer.cornerRadius = userImageView.frame.height / 2
+    }
+    
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -82,6 +89,7 @@ class RepositoryCell: UITableViewCell {
     
     func configureViewComponents() {
         
+        
         setUserImageConstraints()
         setContainerViewConstraints()
         setUserNameLabelConstraints()
@@ -89,6 +97,7 @@ class RepositoryCell: UITableViewCell {
         setStarNumLabel()
         
     }
+    
     
     
     func setUserImageConstraints() {

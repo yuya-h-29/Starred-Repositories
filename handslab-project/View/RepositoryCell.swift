@@ -50,6 +50,7 @@ class RepositoryCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .systemPink
         label.font = UIFont.systemFont(ofSize: 16)
+        label.backgroundColor = .white
         label.text = "1000"
         return label
     }()
@@ -60,9 +61,9 @@ class RepositoryCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(userImageView)
-        addSubview(containerView)
         containerView.addSubview(userNameLabel)
         containerView.addSubview(repositoryNameLabel)
+        addSubview(containerView)
         addSubview(starNumLabel)
  
         configureViewComponents()
@@ -106,7 +107,7 @@ class RepositoryCell: UITableViewCell {
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
     
@@ -128,7 +129,8 @@ class RepositoryCell: UITableViewCell {
     func setStarNumLabel() {
         starNumLabel.translatesAutoresizingMaskIntoConstraints = false
         starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        starNumLabel.leadingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 10).isActive = true
+        starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+
         
     }
 

@@ -14,7 +14,8 @@ class RepositoryCell: UITableViewCell {
     let userImageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
-        img.layer.cornerRadius = 35
+//        img.layer.cornerRadius = img.frame.height / 2
+        img.layer.cornerRadius = 40
         img.clipsToBounds = true
         img.backgroundColor = .black
         
@@ -24,34 +25,31 @@ class RepositoryCell: UITableViewCell {
     let userNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         label.text = "AAAAAAAA"
-        label.textColor = .white
         return label
     }()
     
     let repositoryNameLabel: UILabel = {
         let label = UILabel()
-//        label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 18)
         label.text = "BBBBBB"
-        label.textColor = .white
         return label
     }()
     
     let containerView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.backgroundColor = .black
         return view
     }()
     
     let starNumLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemPink
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.backgroundColor = .white
-        label.text = "1000"
+        label.text = "⭐️1000"
         return label
     }()
     
@@ -107,7 +105,7 @@ class RepositoryCell: UITableViewCell {
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
         containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
     }
 
     

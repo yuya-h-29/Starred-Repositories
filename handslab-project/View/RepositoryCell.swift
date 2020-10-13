@@ -50,7 +50,7 @@ class RepositoryCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .systemPink
         label.font = UIFont.systemFont(ofSize: 14)
-        label.backgroundColor = .white
+        label.backgroundColor = .black
         return label
     }()
     
@@ -64,9 +64,9 @@ class RepositoryCell: UITableViewCell {
         addSubview(userImageView)
         containerView.addSubview(userNameLabel)
         containerView.addSubview(repositoryNameLabel)
-        containerView.addSubview(starNumLabel)
+//        containerView.addSubview(starNumLabel)
         addSubview(containerView)
-//        addSubview(starNumLabel)
+        addSubview(starNumLabel)
  
         configureViewConstraints()
     }
@@ -117,7 +117,8 @@ class RepositoryCell: UITableViewCell {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10).isActive = true
+//        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: starNumLabel.leadingAnchor, constant: -10).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: 90).isActive = true
 //        containerView.widthAnchor.constraint(equalTo: containerView.widthAnchor)
     }
@@ -141,9 +142,9 @@ class RepositoryCell: UITableViewCell {
     func setStarNumLabel() {
         starNumLabel.translatesAutoresizingMaskIntoConstraints = false
         starNumLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        starNumLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor).isActive = true
-        starNumLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-//        starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+//        starNumLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor).isActive = true
+//        starNumLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        starNumLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
 //        starNumLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor).isActive = true
 //        starNumLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
     }

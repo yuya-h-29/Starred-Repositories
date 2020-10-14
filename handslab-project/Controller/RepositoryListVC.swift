@@ -15,8 +15,7 @@ class RepositoryListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        title = "AAAAAA"
+
         
         configureTableView()
         fetchData()
@@ -58,6 +57,7 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
         return repositories.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.repositoryCell) as! RepositoryCell
@@ -68,5 +68,14 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let repository = repositories[indexPath.row]
+        
+        if let url = URL(string: repository.repositoryUrl){
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
     
 }

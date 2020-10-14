@@ -28,19 +28,16 @@ class RepositoryListVC: UIViewController{
     
     func fetchData() {
         Service.fetchData(page: pageNumber, pagination: true) { (repository) in
-//            self.repositories = repository
             
             self.repositories.append(repository)
             
-            print(repository)
-            
             DispatchQueue.main.async {
-//                print(self.repositories.count)
-                Service.isFirstLoadFinished = true
+                if !Service.isFirstLoadFinished {
+                    Service.isFirstLoadFinished = true
+                }
                 self.tableView.reloadData()
             }
         }
-
         pageNumber += 1
     }
     
@@ -57,6 +54,7 @@ class RepositoryListVC: UIViewController{
         tableView.pin(to: view)
         
     }
+    
 }
 
 
@@ -91,33 +89,20 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource, UIScroll
         }
     }
     
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        let position = tableView.contentOffset.y
+        let position = scrollView.contentOffset.y
         
-        if position >= (tableView.contentSize.height - tableView.frame.size.height) && Service.isFirstLoadFinished{
+        if position >= (tableView.contentSize.height - 100 - scrollView.frame.size.height) && Service.isFirstLoadFinished{
             
             guard !Service.isPaginating else {
                 return
             }
  
-//            print("did scroll has called")
-            
-//            Service.fetchData(page: pageNumber, pagination: true) { (repository) in
-//
-//                self.repositories.append(contentsOf: repository)
-//
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            }
             fetchData()
             
-//            pageNumber += 1
-//            print(pageNumber)
         }
     }
-    
-
     
 }

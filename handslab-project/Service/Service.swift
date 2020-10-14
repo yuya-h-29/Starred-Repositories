@@ -13,11 +13,14 @@ import Alamofire
 
 struct Service {
 
-    static func fetchData(completion: @escaping ([Repository]) -> ()) {
+    static func fetchData(page: Int, completion: @escaping ([Repository]) -> ()) {
         
         var repositoryArray = [Repository]()
+        
+        
+        let endpoint: String = API.gitHubEndpoint + "&page=\(String(describing: page))"
 
-        AF.request(API.gitHubEndpoint).responseJSON { (response) in
+        AF.request(endpoint).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -34,14 +37,10 @@ struct Service {
             
                 }
                     
-                
             case .failure(let error):
                 print(error)
             }
-            
         }
-
     }
-    
 
 }

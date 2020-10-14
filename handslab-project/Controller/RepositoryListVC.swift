@@ -8,28 +8,29 @@
 
 import UIKit
 
-class RepositoryListVC: UIViewController {
+class RepositoryListVC: UIViewController{
     
     var tableView = UITableView()
     var repositories: [Repository] = []
+    var pageNumber = 1
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         configureTableView()
         fetchData()
         
     }
     
+    
     //MARK: - API
     
     func fetchData() {
-        Service.fetchData { (repository) in
+        Service.fetchData(page: pageNumber) { (repository) in
             self.repositories = repository
             self.tableView.reloadData()
         }
-        
     }
     
     
@@ -45,12 +46,13 @@ class RepositoryListVC: UIViewController {
         tableView.pin(to: view)
         
     }
-
-
 }
 
 
-extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
+//MARK: - RepositoryList Extensions
+
+
+extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,5 +79,9 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource {
             UIApplication.shared.open(url, options: [:])
         }
     }
+    
+    
+    
+
     
 }

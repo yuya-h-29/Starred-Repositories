@@ -69,13 +69,6 @@ class RepositoryCell: UITableViewCell {
     }
     
     
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        userImageView.layer.cornerRadius = userImageView.frame.height / 2
-    }
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -83,12 +76,22 @@ class RepositoryCell: UITableViewCell {
     
     //MARK: - Helper functions
     
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        userImageView.layer.cornerRadius = userImageView.frame.height / 2
+    }
+    
+    
     func configureCellView(repository: Repository) {
         userImageView.setUserImage(imageUrl: repository.userImageUrl)
         userNameLabel.text = repository.userName
         repositoryNameLabel.text = repository.repositoryName
         starNumLabel.text = "⭐️\(String(describing: repository.starNum))"
     }
+    
+    
+    //MARK: - Constraints
     
     
     func configureViewConstraints() {

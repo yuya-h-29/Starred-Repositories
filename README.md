@@ -7,7 +7,7 @@ SwiftarはSwiftで書かれたStarの多い順のリポジトリを閲覧でき�
 
 ## デモ
 
-
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/54800510/95959437-6843cd80-0e3d-11eb-8731-f04ca4825ce7.gif)
 
 
 

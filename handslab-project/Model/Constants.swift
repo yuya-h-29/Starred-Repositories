@@ -11,12 +11,14 @@ import Foundation
 enum Cells {
     
     static let repositoryCell = "repositoryCell"
+    
 }
 
 enum API {
     
     static let gitHubEndpoint = "https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc"
     
+    // properties
     static let items = "items"
     static let owner = "owner"
     static let avatarUrl = "avatar_url"

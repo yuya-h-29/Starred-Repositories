@@ -27,7 +27,7 @@ class RepositoryListVC: UIViewController{
     //MARK: - API
     
     func fetchData() {
-        Service.fetchData(page: pageNumber, pagination: true) { (repository) in
+        Service.fetchData(page: pageNumber) { (repository) in
             
             self.repositories.append(repository)
             

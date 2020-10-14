@@ -18,21 +18,18 @@ struct Service {
     static var isFirstLoadFinished = false
     
     
-    static func fetchData(page: Int, pagination: Bool, completion: @escaping (Repository) -> ()) {
+    static func fetchData(page: Int, completion: @escaping (Repository) -> ()) {
         
         
-        if pagination {
-            isPaginating = true
-        }
+        isPaginating = true
         
-        
-        let endpoint: String = API.gitHubEndpoint + "&page=\(String(describing: page))"
+        let api = API.gitHubEndpoint + "&page=\(String(describing: page))"
 
-        AF.request(endpoint).responseJSON { (response) in
+        AF.request(api).responseJSON { (response) in
             switch response.result {
+            
             case .success(let value):
                 let json = JSON(value)
-                
                 if let repositoryItemArray = json[API.items].array {
                     
                     for item in repositoryItemArray {
@@ -40,14 +37,12 @@ struct Service {
                         let repository = Repository(userImageUrl: item[API.owner][API.avatarUrl].stringValue, userName: item[API.owner][API.login].stringValue, repositoryName: item[API.name].stringValue, starNum: item[API.starNum].intValue, repositoryUrl: item[API.repositoryUrl].stringValue)
 
                         completion(repository)
-
+                        
                     }
             
                 }
                 
-                if pagination {
-                    isPaginating = false
-                }
+                isPaginating = false
                     
             case .failure(let error):
                 print(error)

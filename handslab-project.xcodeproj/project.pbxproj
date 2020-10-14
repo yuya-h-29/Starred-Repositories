@@ -29,7 +29,7 @@
 		746CCD1A2534B3FD009FF3C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		746CCD1C25356437009FF3C8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		746CCD1E2535671B009FF3C8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		74D4421D25341EA8003E8C93 /* handslab-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "handslab-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D4421D25341EA8003E8C93 /* Swiftar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D4422025341EA8003E8C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D4422225341EA8003E8C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		74D4422925341EAB003E8C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		74D4421E25341EA8003E8C93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74D4421D25341EA8003E8C93 /* handslab-project.app */,
+				74D4421D25341EA8003E8C93 /* Swiftar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			);
 			name = "handslab-project";
 			productName = "handslab-project";
-			productReference = 74D4421D25341EA8003E8C93 /* handslab-project.app */;
+			productReference = 74D4421D25341EA8003E8C93 /* Swiftar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -409,7 +409,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yuyaharada.handslab-project";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swiftar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -428,7 +428,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yuyaharada.handslab-project";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swiftar;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

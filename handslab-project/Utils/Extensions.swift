@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 
+
 extension UIView {
     
     func pin(to superView: UIView){
@@ -21,11 +22,10 @@ extension UIView {
 
 }
 
+
 extension UIImageView {
     
     func setUserImage(imageUrl: String) {
-        
         self.kf.setImage(with: URL(string: imageUrl))
-    
     }
 }

@@ -27,10 +27,13 @@ class RepositoryListVC: UIViewController{
     //MARK: - API
     
     func fetchData() {
-        Service.fetchData(page: pageNumber) { (repository) in
+        Service.fetchData(page: pageNumber, pagination: false) { (repository) in
             self.repositories = repository
             self.tableView.reloadData()
+            
         }
+        pageNumber += 1
+        print(repositories.count)
     }
     
     
@@ -49,7 +52,7 @@ class RepositoryListVC: UIViewController{
 }
 
 
-//MARK: - RepositoryList Extensions
+//MARK: - RepositoryListVC Extensions
 
 
 extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
@@ -80,7 +83,24 @@ extension RepositoryListVC: UITableViewDelegate, UITableViewDataSource, UIScroll
         }
     }
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let position = scrollView.contentOffset.y
+        
+        if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+            
+            guard !Service.isPaginating else {
+                return
+            }
+//
+//            Service.fetchData(page: pageNumber, pagination: true) { (repository) in
+//                self.repositories.append(contentsOf: repository)
+//                self.tableView.reloadData()
+//            }
+//
+//            pageNumber += 1
+        }
+    }
     
 
     

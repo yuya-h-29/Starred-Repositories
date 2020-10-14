@@ -12,8 +12,14 @@ import Alamofire
 
 
 struct Service {
+    
+    static var isPaginating = false
 
-    static func fetchData(page: Int, completion: @escaping ([Repository]) -> ()) {
+    static func fetchData(page: Int, pagination: Bool, completion: @escaping ([Repository]) -> ()) {
+        
+        if pagination {
+            isPaginating = true
+        }
         
         var repositoryArray = [Repository]()
         
@@ -35,6 +41,10 @@ struct Service {
                         completion(repositoryArray)
                     }
             
+                }
+                
+                if pagination {
+                    isPaginating = false
                 }
                     
             case .failure(let error):

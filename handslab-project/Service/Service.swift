@@ -14,14 +14,25 @@ import Alamofire
 struct Service {
     
     static var isPaginating = false
+    
+    static var isFirstLoadFinished = false
+    
+    
 
-    static func fetchData(page: Int, pagination: Bool, completion: @escaping ([Repository]) -> ()) {
+//    static func fetchData(page: Int, pagination: Bool, completion: @escaping ([Repository]) -> ()) {
+    
+    
+    // change this
+    static func fetchData(page: Int, pagination: Bool, completion: @escaping (Repository) -> ()) {
+        
+        
+        
         
         if pagination {
             isPaginating = true
         }
         
-        var repositoryArray = [Repository]()
+//        var repositoryArray = [Repository]()
         
         
         let endpoint: String = API.gitHubEndpoint + "&page=\(String(describing: page))"
@@ -37,8 +48,14 @@ struct Service {
                             
                         let repository = Repository(userImageUrl: item[API.owner][API.avatarUrl].stringValue, userName: item[API.owner][API.login].stringValue, repositoryName: item[API.name].stringValue, starNum: item[API.starNum].intValue, repositoryUrl: item[API.repositoryUrl].stringValue)
 
-                        repositoryArray.append(repository)
-                        completion(repositoryArray)
+//                        repositoryArray.append(repository)
+//                        completion(repositoryArray)
+                        
+                        // escape single repo
+                        completion(repository)
+                        
+                        
+
                     }
             
                 }

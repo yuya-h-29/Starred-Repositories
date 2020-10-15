@@ -1,6 +1,8 @@
-# Swiftar
+# Starred-Repositories
 
-SwiftarはSwiftで書かれたStarの多い順のリポジトリを閲覧できるプロトタイプアプリです。
+Starred-RepositoriesはStarの多い順のリポジトリを閲覧できるアプリです。
+
+現在はSwiftで書かれたリポジトリを閲覧できますが、現在言語を選択できる機能を実装しているので、Swift以外の言語で書かれたリポジトリも閲覧可能にする予定です。
 
 画面に表示されたプロジェクトをタップすると、選択したレポジトリを見ることができます。
 
@@ -13,7 +15,7 @@ SwiftarはSwiftで書かれたStarの多い順のリポジトリを閲覧でき�
 
 ## インストール
 
-こちらのアプリはプロトタイプのため、App Storeにはアップロードされておりません。以下のコマンドを使用するか、handslab-project.xcworkspaceを開いてください。
+こちらのアプリはプロトタイプのため、App Storeにはアップロードされておりません。以下のコマンドを使用するか、Starred-Repositories.xcworkspaceを開いてください。
 
 ```bash
 pod install

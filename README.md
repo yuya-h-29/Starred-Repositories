@@ -1,4 +1,4 @@
-# Starred-Repositories
+# ⭐️Starred-Repositories⭐️
 
 Starred-RepositoriesはStarの多い順のリポジトリを閲覧できるアプリです。
 

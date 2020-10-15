@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_handslab_projectVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_handslab_projectVersionString[];
+FOUNDATION_EXPORT double Pods_Starred_RepositoriesVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Starred_RepositoriesVersionString[];
 
